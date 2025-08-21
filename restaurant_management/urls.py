@@ -26,3 +26,8 @@ urlpatterns = [
     path('api/products/',include('products.urls')),
     path('api/orders/',include('orders.urls')),
 ]
+
+def custom_404_view(request, exception):
+    return render(request, "404.html", status=404)
+
+handeler404 = custom_404_view
